@@ -113,7 +113,9 @@ namespace OnlineQuizBackend.Repositories
                 };
                 await _db.UserQuizAttendee.AddAsync(getAttempt);
             }
-            getAttempt.Score += isCorrect ? 1 : 0;
+            else{
+                getAttempt.Score += isCorrect ? 1 : 0;
+            }
             var getUserAnswer = new UserAnswer
             {
                 ApplicationUserId = userId.Id,
